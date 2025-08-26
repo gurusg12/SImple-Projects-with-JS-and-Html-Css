@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  
+  <link rel="stylesheet" href="quize.css">
+</head>
+<body>
+  <div class="main">
+    <a href="index.html" class="bck"></a>
+    <h1 style="margin-bottom: 1.5rem; color: salmon;">Simple Quize</h1>
+    <div class="p"></div>
+    <p class="questions"></p>
+    
+
+    <div class="options"></div>
+    <button class="next">Next</button>
+    <button class="back"><a href="index.html">Back</a></button>
+    
+    
+
+  </div>
+  
+</body>
+<script>
+  let questionshtml = document.querySelector(".questions");
+  let optionshtml = document.querySelector(".options");
+  let scores = document.querySelector(".p");
+  let next = document.querySelector(".next");
+  let back = document.querySelector(".back");
+  back.style.display = "none";
+
+  let main = document.querySelector(".main");
+  next.style.display = "none";
+    
+  let questionslist = [
+    {
+    questions : "Which tag in HTML is used to create a hyperlink?" ,
+    options : ["<div>", "<a>", "<link>", "<span>"],
+    answer : 1
+  },
+  {
+    questions : "Which CSS property makes a webpage responsive for all devices?" ,
+    options : ["position", "float", "media queries", "overflow"],
+    answer : 2
+  },
+  {
+    questions : "What does DOM stand for in JavaScript?" ,
+    options : ["Document Object Model", "Data Object Module", "Dynamic Order Markup", "Document Oriented Method"],
+    answer : 0
+  },
+  {
+    questions : "Which array method is best for looping and displaying options dynamically in JS?" ,
+    options : ["forEach()", "map()", "push()", "concat()"],
+    answer : 0
+  },
+  {
+    questions : "Which Git command uploads your project to GitHub?" ,
+    options : ["git commit", "git push origin main", "git init", "git clone"],
+    answer : 1
+  },
+  {
+    questions : "Why should you hire me as a frontend intern?" ,
+    options : [
+      "Because I copy code from StackOverflow 😅", 
+      "Because I create clean, responsive UI with HTML, CSS, JS", 
+      "Because I never make mistakes", 
+      "Because I’m free 24/7 like a server 😎"
+    ],
+    answer : 1
+  },
+  {
+    questions : "What’s my next goal after internship?" ,
+    options : [
+      "Keep learning React.js, Node.js and advanced frontend", 
+      "Sleep for 1 year", 
+      "Switch to backend instantly", 
+      "Retire as frontend legend already"
+    ],
+    answer : 0
+  },
+  {
+    questions : "Final one 👉 Will you hire Guru Gachinamath as your frontend intern?" ,
+    options : ["Yes", "Of course Yes", "Definitely Yes", "100% Yes 🚀"],
+    answer : 3
+  }
+  ];
+  let questionindex = 0;
+
+   
+  
+
+  function loadquestions(){
+    let currentquestion = questionslist[questionindex];
+   
+    optionshtml.innerHTML = "";
+     questionshtml.textContent = currentquestion.questions;
+
+   currentquestion.options.forEach((index , indexnum)=>{
+    let btn = document.createElement("button");
+    btn.textContent = index;
+    btn.classList.add("btn");
+    optionshtml.appendChild(btn);
+    
+
+    btn.addEventListener("click", function(){
+      next.style.display = "flex";
+      
+      if (indexnum === currentquestion.answer){
+        btn.style.backgroundColor = "green";
+         
+       
+       
+      }
+      
+      else{
+        btn.style.backgroundColor = "red";
+      }
+    })
+   
+    })
+
+  }
+  
+ 
+  loadquestions();
+  
+  next.addEventListener("click",function(){
+     
+
+      questionindex++;
+      if(questionindex < questionslist.length){
+        
+       loadquestions();
+
+      }
+      else{
+        next.style.display="none";
+       
+        optionshtml.innerHTML = "";
+          questionshtml.textContent = "Thanks for visiting ! click something from my profile home page" ;
+          questionshtml.classList.add("questions2");
+          back.style.display ="initial";
+          
+        
+        
+
+      }
+      
+      
+      
+    })
+   
+
+    
+  
+  
+  
+   
+ 
+  
+</script>
+</html>l

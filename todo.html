@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  
+   }
+    html,body{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(39, 65, 65);
+}
+.container{
+
+  width: 500px;
+  border: 0.5px solid rgb(238, 185, 23);
+  padding: 15px;
+  margin: auto;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+
+}
+h1{
+  
+
+  margin: auto;
+  margin-bottom: 20px;
+  color: white;
+}
+.operate{
+  display: flex;
+  gap: 50px;
+  align-items: center;
+
+
+}
+.btn{
+  padding: 10px 20px ;
+  font-size: 20px;
+  border-radius: 15px;
+}
+.inp{
+   padding: 10px 20px ;
+  font-size: 20px;
+  border-radius: 15px;
+  
+}
+.li{
+  border-top: 0.5px solid rgb(25, 219, 7);
+  margin: auto;
+  margin-top: 20px;
+  list-style: none;
+ 
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  
+  gap: 50px;
+
+  align-items: center;
+  padding: 10px;
+   
+  
+  
+  
+  
+}
+.li2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  
+  height: 40px;
+  
+  
+  padding: 12px 20px ;
+  font-size: 25px;
+  
+  font-size: 25px;
+  color: white;
+  font-weight: 600;
+ 
+
+}
+.btn2{
+  background-color: rgb(243, 116, 116);
+  padding: 9px 20px ;
+  font-size: 20px;
+  border-radius: 15px;
+}
+.index{
+   margin: auto;
+  font-size: 15px;
+  color: white;
+ 
+  padding: 10px 20px ;
+}
+
+
+  </style>
+
+</head>
+<body>
+ <div class="container">
+  <h1>Simple Do-To list</h1>
+   <div class="operate"><input type="text" placeholder="Enter To-Do list Here!...." class="inp" value="">
+  <button class="btn">Add</button></div>
+  <li class="li">
+    <button class="index"><a href="index.html">--</a></button>
+  </li></div>
+  
+</body>
+<script>
+  let inp = document.querySelector(".inp");
+  let btn = document.querySelector(".btn");
+  let li = document.querySelector(".li");
+   li.style.display = "none";
+  
+  btn.addEventListener("click", function(){
+    li.style.display = "flex";
+    let text = inp.value;
+    let li2 = document.createElement("li");
+    let btn2 = document.createElement("button");
+    li2.classList.add("li2");
+    btn2.classList.add("btn2");
+    li2.textContent =  text;
+    btn2.textContent = "Delete";
+    btn2.addEventListener("click", function(){
+      li2.remove();
+      btn2.style.display="none";
+
+    })
+    li.appendChild(li2);
+    li2.appendChild(btn2);
+
+  })
+</script>
+</html>

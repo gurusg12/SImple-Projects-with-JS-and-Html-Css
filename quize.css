@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(12, 14, 17);
+
+}
+
+.main{
+    border: 0.5px solid rgb(205, 248, 154);
+    margin: auto;
+    height: 700px;
+    width: 700px;
+   
+    border-radius: 10px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bck{
+    position: absolute;
+    top: 50px;
+    background-color: yellow;
+    height: 10px;
+    width: 10px;
+}
+.bck:hover{
+    transform: scale(1.5);
+    transition: 0.2s;
+    background-color: aliceblue
+}
+
+.questions{
+    font-size: 30px;
+    color: beige;
+}
+.questions2{
+    color: rgb(228, 238, 239);
+    font-size: 40px;
+    text-align: center;
+
+}
+.next{
+    padding: 10px;
+    background-color: rgb(149, 167, 149);
+    color: black;
+    margin-top: 52px;
+    font-size: 20px;
+    cursor: pointer;
+    
+}
+.next2{
+    padding: 10px;
+    background-color: rgb(149, 167, 149);
+    color: black;
+    margin-top: 52px;
+    font-size: 20px;
+    cursor: pointer;
+    
+}
+.next:hover{
+    background-color: rgb(241, 199, 199);
+}
+.btn{
+    margin-top: 50px;
+    
+    padding: 15px 20px;
+    background-color: rgb(128, 221, 182);
+    color: black;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.back{
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 15px;
+    margin-top: 50px;
+  
+}
+.back:hover{
+    background-color: rgb(244, 233, 173);
+    color: black;
+}
+.back a{
+    text-decoration: none;
+}

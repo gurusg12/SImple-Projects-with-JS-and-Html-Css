@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculate</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+            background-color: rgb(1, 5, 9);
+        }
+
+        .container{
+            
+            height: 48.5rem;
+            width: 40rem;
+            border: 0.5px solid rgb(159, 224, 227);
+            margin: auto;
+            margin-top: 60px;
+            text-align: center;
+            padding-top: 2rem;
+        }
+        .container:hover{
+            background-color: rgb(22, 23, 23);
+            transition: 0.8s;
+            border: 0.8px solid rgb(204, 204, 154);
+        }
+        .dis{
+            height: 4rem;
+            width: 35.8rem;
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            margin-bottom: 1rem;
+            padding: 2.5% 15% ;
+            
+        }
+        .bts{
+           height: 9rem;
+           font-size: 2rem;
+           width: 7rem;
+           margin: 0 0 0.5rem ;transition: 0.3s;
+           cursor: pointer;
+        }
+        .bts:hover{
+            background-color: rgb(244, 244, 156);
+            font-size: 2rem;
+            transition: 0.1s;
+        }
+        .subbts .bts:hover{
+            height: 9rem; 
+            background-color: rgb(31, 209, 126);
+            font-size: 3rem;
+            transition: 0.3s;
+
+        }
+       
+    </style>
+</head>
+<body>
+     
+    <div class="container">
+        <h1 style="color: rgb(142, 243, 142); margin-bottom: 20px;">Simple Calculator using JS</h1>
+       <input type="text" class="dis"  readonly>
+        <div class="btns">
+       <button class="bts">1</button>
+       <button class="bts">2</button>
+       <button class="bts">3</button>
+       <button class="bts">4</button>
+       <button class="bts">5</button>
+       <br>
+       <button class="bts">6</button>
+       <button class="bts">7</button>
+       <button class="bts">8</button>
+       <button class="bts">9</button>
+       <button class="bts">0</button>
+       <br>
+       <div class="subbts" >
+        <button class="bts" style="background-color: rgb(35, 222, 232);">c</button>
+       <button class="bts">/</button>
+       <button class="bts">*</button>
+       
+       <button class="bts" style="background-color: rgb(215, 126, 67);">+</button>
+       <button class="bts">-</button>
+       </div>
+       <button style="height: 50px; width: 100px; margin-top: 10px; background-color: orange; font-size: 2.5rem;" class="bts">=</button>
+        </div>
+        <button style=" margin-top: 15px;  height: 60px; width: 160px; background-color: rgb(45, 228, 170); border-radius: 10px; text-decoration: none; font-size: 50px; font-weight: 400;"><a href="index.html" style="text-decoration: none; color: black;">&#8592;</a></button>
+       
+
+    </div>
+
+</body>
+<script>
+    let display = document.querySelector(".dis");
+    let btns = document.querySelectorAll(".bts");
+   
+   display.value = "";
+
+   btns.forEach((o , p )=>{
+    o.addEventListener("click",function(){
+       
+    let vels = o.textContent;
+        if(vels === "="){
+            display.value=eval(display.value);
+
+        }
+        else if(vels === "c"){
+            display.value="";
+
+        }
+       else {
+        display.value += vels;
+       }
+    })
+   })
+</script>
+</html>
